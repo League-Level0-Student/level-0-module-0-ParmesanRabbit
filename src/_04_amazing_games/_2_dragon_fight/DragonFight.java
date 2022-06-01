@@ -14,19 +14,19 @@ public class DragonFight {
 		JOptionPane.showMessageDialog(null, "Defeat the dragon to take its treasure!", "Dragon Fighter", 0, dragon);
 
 		// 1. Create some variables to hold health levels
-		
+		int playerHealth =100;
 			// playerHealth to store your health - set it equal to 100
-	
+		int dragonHealth =100;
 			// dragonHealth to store the dragon's health - set it equal to 100
 
 		// 2. Create some variables to hold the attack strengths. These will be given different values later. 
 		
 			// playerAttack to store the damage the player's attack will do - set it equal
 			// to 0 for now.
-	
+		int playerAttack =0;
 			// dragonAttack to store the damage the dragon's attack will do - set it equal
 			// to 0 for now.
-
+		int dragonAttack =0;
 		
 		//  This while statement will cause the game attack code to repeat
 		while (true) {
@@ -35,41 +35,49 @@ public class DragonFight {
 
 				// 3. Ask the player in a pop-up if they want to attack the dragon with a yell
 				// or a kick
-	
+				String AttackMethod = JOptionPane.showInputDialog("Will you attack the dragon with a yell or a kick?");				
 				// 4. If they typed in "yell":
-	
+				
 					  // -- Find a random number between 0 and 10 and store it in playerAttack. Use
 					  // ran.nextInt(10)
-			
+			if (AttackMethod.equals("yell")) {
+				playerAttack =ran.nextInt(10);
+			}
 				// 5. If they typed in "kick":
-	
+			if  (AttackMethod.equals("kick")) {
 					  // -- Find a random number between 0 and 25 and store it in playerAttack.
-		
+				playerAttack = ran.nextInt(25);
+			}
 				// 6. Subtract the player attack value from the dragon's health
-
+			dragonHealth = -playerAttack;
 			// THE DRAGON RETALIATES
-
+			
 				// 7. Find a random number between 0 and 35 and store it in dragonAttack
-	
+			dragonAttack =ran.nextInt(35);
 				// 8. Subtract the dragon attack value from the player's health
-
+			playerHealth =-dragonAttack;
 			// ASSESS THE DAMAGE
 
 				// 9. If the player's health is less than or equal to 0, the game is over,
 				//    call the playerLost() method
-	
+				if (playerHealth <=0) {
+					playerLost();
+				}
 			
 				// 10. If the dragon's health is less than or equal to 0, the game is over,
 				//     call the dragonLost() method
-
+				if (dragonHealth <=0) {
+					dragonLost();
+				}
 			
 				// 11.  Pop up a message that tells us how much health the player and
 				// 		dragon have left.
-
+				JOptionPane.showMessageDialog(null, "Your health is "+playerHealth+". The dragon's health is "+dragonHealth+"");
 			
 			// (Bonus: Also display the amount of health that was lost by each in this
 			// round)
-			
+				JOptionPane.showMessageDialog(null, "You lost "+dragonAttack+" health points. The dragon lost "+playerAttack+"\n" +
+			"health points.";
 
 		} // this is the end of the while loop
 

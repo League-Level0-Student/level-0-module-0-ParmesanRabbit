@@ -20,25 +20,25 @@ public class AwesomeOrNot {
 		// 4. Get the user to enter something that they think is awesome
 		String FirstNumber= JOptionPane.showInputDialog("Enter something that you think is awesome");
 		// 5. If your variable is  0
-		if (random.equals("0")) {
+		if (random ==0) {
 			JOptionPane.showMessageDialog(null, "That is awesome!");
 		}
 			// -- tell the user whatever they entered is awesome!
 	
 		// 6. If your variable is  1
-		if (random.equals("1")) {
+		if (random ==1) {
 			JOptionPane.showMessageDialog(null, "That is ok.");
 		}
 			// -- tell the user whatever they entered is ok.
 	
 		// 7. If your variable is  2
-		if (random.equals("2")) {
+		if (random ==2) {
 			JOptionPane.showMessageDialog(null, "That is boring.");
 		}
 			// -- tell the user whatever they entered is boring.
 	
 		// 8. If your variable is  3
-		if (random.equals("3")) {
+		if (random ==3) {
 			JOptionPane.showMessageDialog(null, "That's cool.");
 		}
 			// -- invent your own message to give to the user (be nice).
